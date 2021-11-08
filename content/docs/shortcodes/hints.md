@@ -5,7 +5,7 @@ There are 3 colors to choose: `info`, `warning` and `danger`.
 
 ```tpl
 {{</* hint [info|warning|danger] */>}}
-**Markdown content**  
+**Markdown content**
 Lorem markdownum insigne. Olympo signis Delphis! Retexi Nereius nova develat
 stringit, frustra Saturnius uteroque inter! Oculis non ritibus Telethusa
 {{</* /hint */>}}
