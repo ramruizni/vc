@@ -1,5 +1,5 @@
 # Juan Camilo Pineda
 
-Hola amigos wtf wtf
+Holi aqui va mi info...
 
 <img src="https://github.com/jcpinedav.png" alt="MarineGEO circle logo" style="height: 100px; width:100px;"/>
