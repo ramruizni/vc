@@ -5,7 +5,7 @@ type: docs
 
 # Visual Computing Template
 
-Welcome to the [UN / DISI](http://www.ingenieria.unal.edu.co/dependencias/departamentos/departamento-de-ingenieria-de-sistemas-e-industrial) _visual computing_ course template site.
+Welcome to the [UN / DISI](http://www.ingit submodule update --init --recursivegenieria.unal.edu.co/dependencias/departamentos/departamento-de-ingenieria-de-sistemas-e-industrial) _visual computing_ course template site.
 
 ## Goal
 
