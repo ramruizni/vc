@@ -14,3 +14,5 @@ Vivo en Bogotá y me gusta ser autodidacta.
 ##
 
 {{< p5-iframe ver="1.4.0" sketch="../../../../sketches/dfsolanol/illusion.js " width="620" height="620">}}
+
+[Illusion Info](https://www.youtube.com/watch?v=JDWPpCvI0ZQ)
