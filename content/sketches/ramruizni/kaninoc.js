@@ -1,72 +1,30 @@
+let angle = 0;
+function setup() {
+  createCanvas(700, 700);
+  strokeWeight(4)
+}
 
-// this class describes the structure
-// and movents of the brick
-class Brick{
-    constructor(bc, y){
-      this.brickColor = bc;
-      this.yPos = y;
-      this.xPos = 0;
-    }
+function draw() {
+  background(50);
+  noStroke();
+  fill(255,0,0)
+  ellipse(width/2, height/2, 10,10)
   
-    // this function creates the brick
-    createBrick(){
-      fill(this.brickColor);
-      rect(this.xPos, this.yPos, 100, 50);
-    }
-  
-    // this function sets the speed
-    // of movement of the brick to 1
-    setSpeed(){
-      this.xSpeed = 1;
-    }
-  
-    // this function set the bricks in motion
-    moveBrick(){
-      this.xPos+=this.xSpeed;
-      if(this.xPos+100 >= width || this.xPos <= 0){
-        this.xSpeed*=-1;
-      }
-    }
+  for(let i = 15; i< 5000; i+=15)
+  {
+    push()
+    translate(width/2,height/2)
+    rotate(i+ angle * 2)
+    noFill()
+    stroke(20 , i * 100, i -100)
+    ellipse(0, 0, i + 15 , i )
+    
+    pop()
+    
+    angle += 0.0003
   }
-  
-  function setup() {
-    createCanvas(720, 400);
-    createP("Keep the mouse clicked").style('color','#ffffff');
-    createP("to check whether the bricks").style('color','#ffffff');
-    createP("are moving at same speed or not").style('color','#ffffff');
-  }
-  
-  // creating two bricks of
-  // colors white and black
-  let brick1 = new Brick("white",100);
-  let brick2 = new Brick("black",250);
-  
-  //
-  brick1.setSpeed();
-  brick2.setSpeed();
-  
-  function draw () {
-    background(0);
-    if(mouseIsPressed){
-      background(50);
-    }
-    brick1.createBrick();
-    brick1.moveBrick();
-    if(!mouseIsPressed){
-      createBars();
-    }
-    brick2.createBrick();
-    brick2.moveBrick();
-  }
-  
-  // this function creates the black and
-  // white bars across the screen
-  function createBars() {
-    let len = 12;
-    for(let i = 0;i<width/len;i++){
-      fill("white");
-      if(i%2 == 0)
-      rect(i*len,height,len,-height);
-    }
-  }
-  
+}  
+
+
+
+
