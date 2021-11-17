@@ -22,3 +22,4 @@ En su estudio, Goodale identificó que cuando las personas tienen una referencia
 
 
 {{< p5-iframe ver="1.4.0" sketch="../../../../sketches/ramruizni/1.js " width="520" height="420" >}}
+.
