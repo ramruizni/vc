@@ -6,6 +6,8 @@ Para abordar adecuadamente este algoritmo, primero se analizará el algoritmo de
 
 Dada la coordenada de dos puntos A (x0, y0) y B (x1, y1). La tarea de encontrar todos los puntos intermedios necesarios para dibujar la línea AB en la pantalla con píxeles. Cada píxel tiene coordenadas enteras.
 
+<img src="https://i.ibb.co/PYvPzWP/5.png" alt="5" border="0">
+
 <img src="https://i.ibb.co/0h5JYSH/1.png" alt="1" border="0">
 
 Considerese la figura que se muestra a continuación, que se dibuja utilizando el algoritmo de generación de líneas de Bresenham. Tomese un segmento y su coordenada inicial x. En un loop se agrega en cada paso un valor de 1 a x. Así mismo, se calcula un error. Si el error no supera la mitad de la altura de la celda, se rellena el pixel actual.
@@ -23,3 +25,9 @@ El algoritmo de línea de Xiaolin Wu se caracteriza por el hecho de que en cada 
 Una ilustración didáctica de éste algoritmo se puede ver a continuación
 
 {{< p5-iframe ver="1.4.0" sketch="../../../../sketches/taller2/punto2.js" width="620" height="620" >}}
+
+## Referencias
+
+[The Bresenham Line Algorithm](https://csustan.csustan.edu/~tom/Lecture-Notes/Graphics/Bresenham-Line/Bresenham-Line.pdf)
+
+[Bresenham’s Line Generation Algorithm](https://www.geeksforgeeks.org/bresenhams-line-generation-algorithm/)
