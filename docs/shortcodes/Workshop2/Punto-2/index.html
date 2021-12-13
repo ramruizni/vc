@@ -2,19 +2,23 @@
 <head>
 <meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=description content="Algoritmo de Xiaolin Wu #           &#34;  ">
+<meta name=description content="Algoritmo de Xiaolin Wu #  Para abordar adecuadamente este algoritmo, primero se analizará el algoritmo de Bresenham
+Bresenham’s Line Generation Algorithm #  Dada la coordenada de dos puntos A (x1, y1) y B (x2, y2). La tarea de encontrar todos los puntos intermedios necesarios para dibujar la línea AB en la pantalla con píxeles. Cada píxel tiene coordenadas enteras.
+Considerese la figura que se muestra a continuación, que se dibuja utilizando el algoritmo de generación de líneas de Bresenham.">
 <meta name=theme-color content="#FFFFFF">
 <meta name=color-scheme content="light dark"><meta property="og:title" content>
-<meta property="og:description" content="Algoritmo de Xiaolin Wu #           &#34;  ">
+<meta property="og:description" content="Algoritmo de Xiaolin Wu #  Para abordar adecuadamente este algoritmo, primero se analizará el algoritmo de Bresenham
+Bresenham’s Line Generation Algorithm #  Dada la coordenada de dos puntos A (x1, y1) y B (x2, y2). La tarea de encontrar todos los puntos intermedios necesarios para dibujar la línea AB en la pantalla con píxeles. Cada píxel tiene coordenadas enteras.
+Considerese la figura que se muestra a continuación, que se dibuja utilizando el algoritmo de generación de líneas de Bresenham.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ramruizni.github.io/vc/docs/shortcodes/Workshop2/Punto-2/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2021-12-12T22:34:44-05:00">
+<meta property="article:modified_time" content="2021-12-13T03:16:20-05:00">
 <title>Punto 2 | Visual Computing</title>
 <link rel=manifest href=/vc/manifest.json>
 <link rel=icon href=/vc/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/vc/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
 <script defer src=/vc/flexsearch.min.js></script>
-<script defer src=/vc/en.search.min.5f18d4c3f95681882ecfe7833208702d48f172ad286c30a07ba5a51f33a111f0.js integrity="sha256-XxjUw/lWgYguz+eDMghwLUjxcq0obDCge6WlHzOhEfA=" crossorigin=anonymous></script>
+<script defer src=/vc/en.search.min.cdb4fec18450ed52ae9c3a96c1f9207ef276225535d51e4f9b3d5e5104f2ec14.js integrity="sha256-zbT+wYRQ7VKunDqWwfkgfvJ2IlU11R5Pmz1eUQTy7BQ=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -98,7 +102,11 @@ Blog
 <aside class="hidden clearfix">
 <nav id=TableOfContents>
 <ul>
-<li><a href=#algoritmo-de-xiaolin-wu>Algoritmo de Xiaolin Wu</a></li>
+<li><a href=#algoritmo-de-xiaolin-wu>Algoritmo de Xiaolin Wu</a>
+<ul>
+<li><a href=#bresenhams-line-generation-algorithm>Bresenham’s Line Generation Algorithm</a></li>
+</ul>
+</li>
 </ul>
 </nav>
 </aside>
@@ -107,6 +115,20 @@ Blog
 Algoritmo de Xiaolin Wu
 <a class=anchor href=#algoritmo-de-xiaolin-wu>#</a>
 </h1>
+<p>Para abordar adecuadamente este algoritmo, primero se analizará el algoritmo de Bresenham</p>
+<h2 id=bresenhams-line-generation-algorithm>
+Bresenham’s Line Generation Algorithm
+<a class=anchor href=#bresenhams-line-generation-algorithm>#</a>
+</h2>
+<p>Dada la coordenada de dos puntos A (x1, y1) y B (x2, y2). La tarea de encontrar todos los puntos intermedios necesarios para dibujar la línea AB en la pantalla con píxeles. Cada píxel tiene coordenadas enteras.</p>
+<img src=https://i.ibb.co/0h5JYSH/1.png alt=1 border=0>
+<p>Considerese la figura que se muestra a continuación, que se dibuja utilizando el algoritmo de generación de líneas de Bresenham. Tomese un segmento y su coordenada inicial x. En un loop se agrega en cada paso un valor de 1 a x. Así mismo, se calcula un error. Si el error no supera la mitad de la altura de la celda, se rellena el pixel actual.</p>
+<p><a href=https://ibb.co/F0GTqdr><img src=https://i.ibb.co/RBLw4JF/3.png alt=3 border=0></a></p>
+<p>Una linea completa quedaría de la siguiete forma:</p>
+<p><a href=https://ibb.co/Sxcdz6Y><img src=https://i.ibb.co/wL7wfdG/2.png alt=2 border=0></a></p>
+<p>El algoritmo de línea de Xiaolin Wu se caracteriza por el hecho de que en cada paso del cálculo se realiza para los dos más cercanos a la línea de píxeles, y se colorean con diferente intensidad, según la distancia</p>
+<p><a href=https://ibb.co/g3yhV3N><img src=https://i.ibb.co/c1JVL10/4.png alt=4 border=0></a></p>
+<p>Una ilustración didáctica de éste algoritmo se puede ver a continuación</p>
 <iframe id=punto2 style=width:620px;height:620px srcdoc="
         <!DOCTYPE html>
         <html>
@@ -127,7 +149,7 @@ Algoritmo de Xiaolin Wu
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://github.com/visualcomputing/vc/commit/e442cf0942129505c0389577b810c7eb03bc1c29 title="Last modified by Rafael Ruiz | December 13, 2021" target=_blank rel=noopener>
+<div><a class="flex align-center" href=https://github.com/visualcomputing/vc/commit/c948aa4afd8f9bd0b3adcee78ff623afa2317fbc title="Last modified by Daniel Felipe | December 13, 2021" target=_blank rel=noopener>
 <img src=/vc/svg/calendar.svg class=book-icon alt=Calendar>
 <span>December 13, 2021</span>
 </a>
@@ -143,7 +165,11 @@ Algoritmo de Xiaolin Wu
 <div class=book-toc-content>
 <nav id=TableOfContents>
 <ul>
-<li><a href=#algoritmo-de-xiaolin-wu>Algoritmo de Xiaolin Wu</a></li>
+<li><a href=#algoritmo-de-xiaolin-wu>Algoritmo de Xiaolin Wu</a>
+<ul>
+<li><a href=#bresenhams-line-generation-algorithm>Bresenham’s Line Generation Algorithm</a></li>
+</ul>
+</li>
 </ul>
 </nav>
 </div>
