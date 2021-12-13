@@ -4,7 +4,7 @@ Para abordar adecuadamente este algoritmo, primero se analizará el algoritmo de
 
 ## Bresenham’s Line Generation Algorithm
 
-Dada la coordenada de dos puntos A (x1, y1) y B (x2, y2). La tarea de encontrar todos los puntos intermedios necesarios para dibujar la línea AB en la pantalla con píxeles. Cada píxel tiene coordenadas enteras.
+Dada la coordenada de dos puntos A (x0, y0) y B (x1, y1). La tarea de encontrar todos los puntos intermedios necesarios para dibujar la línea AB en la pantalla con píxeles. Cada píxel tiene coordenadas enteras.
 
 <img src="https://i.ibb.co/0h5JYSH/1.png" alt="1" border="0">
 
