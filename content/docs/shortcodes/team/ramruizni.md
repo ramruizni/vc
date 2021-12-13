@@ -21,5 +21,7 @@ Esta es una modificación que realizé con el fin de denotar cómo cuando se man
 En su estudio, Goodale identificó que cuando las personas tienen una referencia física del objeto central, su percepción del tamano no se ve modificada. Busqué crear un efecto similar al trasladar el centro de forma circular.
 
 
+
 {{< p5-iframe ver="1.4.0" sketch="../../../../sketches/ramruizni/1.js " width="520" height="420" >}}
-.
+{{< p5-iframe ver="1.4.0" sketch="../../../../sketches/ramruizni/2.js " width="820" height="620" >}}
+
