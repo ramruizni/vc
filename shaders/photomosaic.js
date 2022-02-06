@@ -17,7 +17,7 @@ function preload() {
 
 function setup() {
     slider = createSlider(10, 100, 50, 10);
-    slider.position(10, 10);
+    slider.position(10, 590);
     slider.style('width', '600px');
 
     picture.resize(600, 600);
@@ -26,7 +26,7 @@ function setup() {
     //image(picture, 0, 0, 600, 600)
 
     button = createButton('CHANGE IMAGE')
-    button.position(10, 30)
+    button.position(10, 560)
     button.style('background: #222; color: #fff; border-radius: 20px; padding: 5px; font-weight: 600')
     button.mousePressed(() => {
         loadImage('https://picsum.photos/600', img => {
@@ -38,6 +38,7 @@ function setup() {
 }
 
 async function draw() {
+    //const start = Date.now();
     if (slider.value() != scaleFactor) {
         background(33);
         scaleFactor = slider.value();
@@ -56,8 +57,9 @@ async function draw() {
             image(pixelImage, x, y);
         }
     }
-    valueDisplayer.html('The value is ' + slider.value())
-
+    /*const duration = Date.now() - start;
+    console.log("scaleFactor: ", scaleFactor);
+    console.log("duration:", duration);*/
 }
 
 function closestColor(r, g, b) {
