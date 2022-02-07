@@ -12,13 +12,13 @@ La segunda implementación utiliza la librería WebGL como el entorno visual, lo
 Como Webcrawler se optó por obtener las imágenes del api gratuito Lorem Picsum de la siguiente forma:">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ramruizni.github.io/vc/docs/shortcodes/Workshop3/Photomosaic/"><meta property="article:section" content="docs">
-<meta property="article:modified_time" content="2022-02-06T18:53:21-05:00">
+<meta property="article:modified_time" content="2022-02-06T22:17:13-05:00">
 <title>Photomosaic | Visual Computing</title>
 <link rel=manifest href=/vc/manifest.json>
 <link rel=icon href=/vc/favicon.png type=image/x-icon>
 <link rel=stylesheet href=/vc/book.min.89a77f7e702a8626749b948bbfb01109823daf6c1246ca407d1378833494c402.css integrity="sha256-iad/fnAqhiZ0m5SLv7ARCYI9r2wSRspAfRN4gzSUxAI=" crossorigin=anonymous>
 <script defer src=/vc/flexsearch.min.js></script>
-<script defer src=/vc/en.search.min.615c1eaa87cdf473f9fbd7583c9cacb85038dfd6f913b807894177704dad67db.js integrity="sha256-YVweqofN9HP5+9dYPJysuFA439b5E7gHiUF3cE2tZ9s=" crossorigin=anonymous></script>
+<script defer src=/vc/en.search.min.8d553ac0f70a71b27200c18b82bca55c01fb387c8260ac47e6e46b93973415fc.js integrity="sha256-jVU6wPcKcbJyAMGLgrylXAH7OHyCYKxH5uRrk5c0Ffw=" crossorigin=anonymous></script>
 </head>
 <body dir=ltr>
 <input type=checkbox class="hidden toggle" id=menu-control>
@@ -138,6 +138,16 @@ Photomosaic
 </code></pre>
 <p>Éstas imágenes se utilizan como la base original del foto-mosaico a representar. Las que se emplean como bloques de color son otras que se han almacenado de forma local y se han codificado en base a sus colores en RGB de la siguiente forma:</p>
 <img src=https://i.ibb.co/72Nm5kQ/images-Codified.png alt=5 border=0 width=200px>
+<p>Para realizar el hash comparamos el primer pixel del recuadro seleccionado con aquella imagen que tenga los valores de RGB más cercanos, así:</p>
+<pre><code>for (let i = 0; i < datasetSize; ++i) {
+    const img_i = ownDataset[i];
+    let distance = dist(r, g, b, img_i[0], img_i[1], img_i[2]);
+    if (minDistance == -1 || distance < minDistance) {
+        minDistance = distance;
+        index = `${img_i[0]}${img_i[1]}${img_i[2]}`;
+    }
+}
+</code></pre>
 <p>El resultado es el siguiente:</p>
 <h2 id=software>
 Software
@@ -183,12 +193,32 @@ Hardware
       "></iframe>
 <p>Para lograr un rendimiento aceptable en la visualización, se optó por restringir el máximo de imágenes posibles en la implementación del Software a un total de 100 por lado (10^4).</p>
 <p>En cambio, el uso de WebGL nos muestra con fluidez un total de 1'000.000 por lado (10^12).</p>
+<p>La siguiente gráfica nos muestra la cantidad de tiempo que tarda la función draw() en completar su trabajo en el programa de Software:
+<iframe id="performanceResults.js " style=width:620px;height:420px srcdoc="
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js></script>
+            <script src=https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.sound.min.js></script>
+            
+            
+            
+            
+            
+            <script src=../../../../sketches/performanceResults.js ></script>
+          </head>
+          <body>
+          </body>
+        </html>
+      "></iframe>
+</p>
+<p>Para el caso del Hardware, notamos cómo el tiempo nunca aumentó de 1ms incluso llegando a su valor máximo. Podemos concluir que este tipo de aplicaciones sólo es viable a través de una implementación de Hardware y la paralelización de tareas que esta provee.</p>
 </article>
 <footer class=book-footer>
 <div class="flex flex-wrap justify-between">
-<div><a class="flex align-center" href=https://github.com/visualcomputing/vc/commit/69c5c6a7c950b625440721469a90811018ac8cff title="Last modified by Rafael Ruiz | February 6, 2022" target=_blank rel=noopener>
+<div><a class="flex align-center" href=https://github.com/visualcomputing/vc/commit/3d3b076dbedaac2e4dd2461254cb859417a45d4b title="Last modified by Rafael Ruiz | February 7, 2022" target=_blank rel=noopener>
 <img src=/vc/svg/calendar.svg class=book-icon alt=Calendar>
-<span>February 6, 2022</span>
+<span>February 7, 2022</span>
 </a>
 </div>
 </div>
