@@ -17,6 +17,18 @@ Como Webcrawler se optó por obtener las imágenes del api gratuito [Lorem Picsu
 
 <img src="https://i.ibb.co/72Nm5kQ/images-Codified.png" alt="5" border="0" width="200px">
 
+Para realizar el hash comparamos el primer pixel del recuadro seleccionado con aquella imagen que tenga los valores de RGB más cercanos, así:
+
+<pre><code>for (let i = 0; i < datasetSize; ++i) {
+    const img_i = ownDataset[i];
+    let distance = dist(r, g, b, img_i[0], img_i[1], img_i[2]);
+    if (minDistance == -1 || distance < minDistance) {
+        minDistance = distance;
+        index = `${img_i[0]}${img_i[1]}${img_i[2]}`;
+    }
+}
+</code></pre>
+
 El resultado es el siguiente:
 
 ## Software
